@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="home_hero">
+        <div class="navbar">
+            <a href="#about"> Register </a>
+            <a href="#place"> Why use us </a>
+            <a href="https://github.com/AndyMasc/Amazon-Web-Scraper---Price-Tracker"> GitHub </a>
+            <a href="#dest"> Privacy </a>
+        </div>
+
+        <h1> Make <i> every </i> day Prime <br> day with Price Ping. </h1>
+        <p> Track the prices of your favourite Amazon products effortlessly, and <br> instantly get notified when their prices drop. <b> Never miss a deal again. </b> </p>
+
+        <div class="CTA-button">
+            <a href="#about"> Start saving </a>
+        </div>
+    </div>
+{% endblock %}
