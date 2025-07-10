@@ -1,17 +1,27 @@
 {% extends 'base.html' %}
 
 {% block head %}
+    {% load static %}
 
+    <link rel="stylesheet"  href="{% static 'authenticate/css/register.css' %}">
 {% endblock %}
 
 {% block content %}
-    <div class="home_hero">
-        <h1> Register </h1>
+    <div class="title">
+        <h1> <span style="color:WhiteSmoke"> Create an account </span> </h1>
     </div>
-
-    <form method="POST" action="">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" name="Register account">
-    </form>
+    <div class="container">
+        <div class="form">
+            <form method="POST" action="">
+                {% csrf_token %}
+                {% for field in form %}
+                    <h3> {{ field.label }} </h3>
+                    {{ field }}
+                {% endfor %}
+            </form>
+            {{ form.errors }}
+            <input type="submit" value="Register account">
+            <a href="{% url 'authenticate:login' %}"> <span style="color:WhiteSmoke"> Already registered? Log In </span> </a>
+        </div>
+    </div>
 {% endblock %}

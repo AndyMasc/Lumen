@@ -7,12 +7,13 @@ body {
     position: fixed;
     background-color: black;
     width: 100%;
-    height: 8%;
+    height: 7%;
     justify-content: center;
     align-items: center;
     gap: 5%;
     top: 0;
     left: 0;
+    border-bottom: solid #303030;
 }
 
 .navbar a {
@@ -46,7 +47,7 @@ body {
 .home_hero h1 {
     font-family: Poppins;
     font-size: 55px;
-    font-weight: 600;
+    font-weight: 550;
     color: WhiteSmoke;
 }
 
@@ -63,7 +64,7 @@ body {
 .CTA-button {
     position: relative;
     display: flex;
-    margin-top: 6%;
+    margin-top: 7%;
 }
 
 .CTA-button a {
@@ -86,4 +87,35 @@ body {
 img {
     width: 40%;
     pointer-events: none;
+}
+
+.ScrollDown {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    left: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.ScrollDown img {
+    width: 45px;
+    animation: bobbing 1.4s linear infinite;
+}
+
+@keyframes bobbing {
+    0% {
+        transform: translateY(0px);
+        animation-timing-function: ease-out;
+    }
+    50% {
+        transform: translateY(10px);
+        animation-timing-function: ease-in;
+    }
+    100% {
+        transform: translateY(0px);
+        animation-timing-function: ease-out
+    }
 }

@@ -8,19 +8,22 @@
 {% block content %}
     <div class="home_hero">
         <div class="navbar">
-            <a href="#about"> Register </a>
-            <a href="#place"> Why use us </a>
-            <a href="https://github.com/AndyMasc/Amazon-Web-Scraper---Price-Tracker"> GitHub </a>
+            <a href="{% url 'authenticate:register' %}"> Register </a>
+            <a href="#place"> About </a>
+            <a href="https://github.com/AndyMasc/Price-Tracker"> GitHub </a>
             <a href="#dest"> Privacy </a>
         </div>
         <div class="hero-text-section">
-            <h1> Make <i> every </i> day Prime day with <span style="color:#ffb370"> Price Ping. </span> </h1>
-            <p> Track the prices of your favourite Amazon products effortlessly, and instantly get notified when their prices drop. <b> Never miss a deal again. </b> </p>
+            <h1> Lumen delivers early clarity for bold startups </h1>
+            <p> Lumen is a platform that quietly analyzes your startup ideas against the competition, to deliver clarity before commitment. </b> </p>
 
             <div class="CTA-button">
                 <a href="#about"> Start saving </a>
             </div>
         </div>
         <img src="{% static 'home/images/HeroImg.png' %}" alt="Demo Image">
+    </div>
+    <div class="ScrollDown">
+        <img src="{% static 'home/images/DownArrow.png' %}" alt="Scroll Down">
     </div>
 {% endblock %}
