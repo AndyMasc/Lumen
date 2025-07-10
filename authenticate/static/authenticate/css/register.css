@@ -1,14 +1,14 @@
 body {
     background-color: black;
     font-family: Poppins;
-}
-
-.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 87%;
     width: 100%;
-    height: 100%;
+    bottom: 0;
     position: fixed;
-    top: 0;
-    left: 0;
 }
 
 .title {
@@ -17,12 +17,79 @@ body {
     width: 100%;
     justify-content: center;
     align-items: center;
-    height: 8%;
-    border: dashed white;
+    height: 10%;
+    margin-top: 3%;
+    top: 0;
+    left: 0;
 }
 
 .title h1 {
     color: WhiteSmoke;
-    font-weight: 550;
-    font-size: 55px;
+    font-weight: 500;
+    font-size: 50px;
+    text-align: center;
+}
+
+.form {
+    background-color: #181818;
+    border-radius: 20px;
+    border: solid #242424;
+    width: 30%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form p {
+    text-align: left;
+    color: #cccccc;
+}
+
+.form form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: WhiteSmoke;
+    text-align: left;
+}
+
+input[type='email'],
+input[type='password'],
+input[type='text'] {
+    background-color: black;
+    color: #cccccc;
+    border: solid 2px #212121;
+    border-radius: 10px;
+    font-size: 15px;
+    width: 80%;
+    height: 6%;
+}
+
+input[type='submit'] {
+    margin-top: 5%;
+    width: 40%;
+    height: 8%;
+    border: solid 2px black;
+    font-family: Poppins;
+    border-radius: 10px;
+    color: #cccccc;
+    cursor: pointer;
+    background-color: #272727;
+    transition: all 0.4s ease;
+    transform: scale(1);
+    margin-bottom: 5%;
+}
+
+input[type='submit']:hover {
+    transform: scale(1.1);
+    color: WhiteSmoke;
+    backgronud-color: #cccccc;
+}
+
+a {
+    color: WhiteSmoke;
 }

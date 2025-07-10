@@ -8,20 +8,17 @@
 
 {% block content %}
     <div class="title">
-        <h1> <span style="color:WhiteSmoke"> Create an account </span> </h1>
+        <h1> <span style="color:WhiteSmoke"> Create a Lumen account </span> </h1>
     </div>
-    <div class="container">
-        <div class="form">
-            <form method="POST" action="">
-                {% csrf_token %}
-                {% for field in form %}
-                    <h3> {{ field.label }} </h3>
-                    {{ field }}
-                {% endfor %}
-            </form>
-            {{ form.errors }}
-            <input type="submit" value="Register account">
-            <a href="{% url 'authenticate:login' %}"> <span style="color:WhiteSmoke"> Already registered? Log In </span> </a>
-        </div>
+    <div class="form">
+        <form method="POST" action="">
+            {% csrf_token %}
+            {% for field in form %}
+                <p> {{ field.label }} </p>
+                {{ field }}
+            {% endfor %}
+            <input type="submit" value="CREATE ACCOUNT">
+            <p> Already registered? <a href="{% url 'authenticate:login' %}"> Log In </a> </p>
+        </form>
     </div>
 {% endblock %}
