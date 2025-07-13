@@ -1,0 +1,15 @@
+{% extends 'authenticate/register.html' %}
+
+{% block title %}
+    Welcome back
+{% endblock %}
+
+{% block submit %}
+    <input type="submit" value="Sign in">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="invalidLogin"> <p> {{ message }} </p> </div>
+        {% endfor %}
+    {% endif %}
+    <p> Don't have an account? <a href="{% url 'authenticate:register' %}"> Register </a> </p>
+{% endblock %}

@@ -8,10 +8,17 @@
 {% block content %}
     <div class="home_hero">
         <div class="navbar">
-            <a href="{% url 'authenticate:register' %}"> Register </a>
             <a href="#place"> About </a>
-            <a href="https://github.com/AndyMasc/Price-Tracker"> GitHub </a>
             <a href="#dest"> Privacy </a>
+            <a href="https://github.com/AndyMasc/Lumen"> GitHub </a>
+            {% if user.is_authenticated %}
+                <a href="#Dashboard"> Dashboard </a>
+                <a href="#Account"> Account </a>
+                <a href="{% url 'authenticate:signout' %}"> Sign out </a>
+            {% else %}
+                <a href="{% url 'authenticate:register' %}"> Register </a>
+                <a href="{% url 'authenticate:signin' %}"> {% csrf_token %} Sign in </a>
+            {% endif %}
         </div>
         <div class="hero-text-section">
             <h1> Lumen delivers early clarity for bold startups </h1>
@@ -19,9 +26,19 @@
                 Lumen analyzes your startup concepts against real industry data to
                 deliver actionable insights that help founders make smarter decisions faster.
             </p>
-
             <div class="CTA-button">
-                <a href="#about"> Start using Lumen </a>
+                {% if user.is_authenticated %}
+                <a href="#dashboard">
+                    View your dashboard,
+                    <b>
+                        {% if request.user.username|length <= 10 %}
+                            {{ request.user.username }}
+                        {% endif %}
+                    </b>
+                </a>
+                {% else %}
+                    <a href="{% url 'authenticate:register' %}"> Start using Lumen </a>
+                {% endif %}
             </div>
         </div>
         <img src="{% static 'home/images/HeroImg.png' %}" alt="Demo Image">

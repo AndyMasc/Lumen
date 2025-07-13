@@ -2,23 +2,35 @@
 
 {% block head %}
     {% load static %}
-
     <link rel="stylesheet"  href="{% static 'authenticate/css/register.css' %}">
+
 {% endblock %}
 
 {% block content %}
-    <div class="title">
-        <h1> <span style="color:WhiteSmoke"> Create a Lumen account </span> </h1>
-    </div>
-    <div class="form">
-        <form method="POST" action="">
-            {% csrf_token %}
-            {% for field in form %}
-                <p> {{ field.label }} </p>
-                {{ field }}
-            {% endfor %}
-            <input type="submit" value="CREATE ACCOUNT">
-            <p> Already registered? <a href="{% url 'authenticate:login' %}"> Log In </a> </p>
-        </form>
+    <div class="container">
+        <h1>
+            <span style="color:WhiteSmoke">
+                {% block title %} Register an account {% endblock %}
+            </span>
+        </h1>
+        <div class="form">
+            <form method="POST" action="" autocomplete="off">
+                    {% csrf_token %}
+
+                    {% for field in form %}
+                        {{ field }}
+                        <ul>
+                            {% if field.errors %}
+                                 {{ field.errors.0 }}
+                            {% endif %}
+                        </ul>
+                    {% endfor %}
+
+                    {% block submit %}
+                        <input type="submit" value="Register">
+                        <p style="text-align:center;"> Already registered? <a href="{% url 'authenticate:signin' %}"> Sign In </a> </p>
+                    {% endblock %}
+            </form>
+        </div>
     </div>
 {% endblock %}

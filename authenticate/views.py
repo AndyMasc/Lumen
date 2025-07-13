@@ -1,21 +1,39 @@
 from django.shortcuts import render, HttpResponse, redirect
 
 # Create your views here.
-from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
+from .forms import CreateUserForm, AuthorizeUser
 
 def register(request):
-    form = CreateUserForm()
-    context = {'form':form}
-
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
+        context = {'form': form}
         if form.is_valid():
             form.save()
-            return redirect('authenticate:login')
-        else:
-            return render(request, 'authenticate/register.html', context)
+            user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password1'])
+            login(request, user)
+            return redirect('home:index')
+    else:
+        form = CreateUserForm()
+        context = {'form': form}
     return render(request, 'authenticate/register.html', context)
 
-def login(request):
-    return HttpResponse('Login')
+def signin(request):
+    form = AuthorizeUser(request)
+    context = {'form': form}
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('home:index')
+        else:
+            messages.error(request, 'Invalid credentials. Please try again.')
+    return render(request, 'authenticate/signin.html', context)
+
+def signout(request):
+    logout(request)
+    return redirect('home:index')
