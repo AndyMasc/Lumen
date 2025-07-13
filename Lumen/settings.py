@@ -43,9 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'django_browser_reload',
+    # My installed apps
     'home.apps.HomeConfig',
     'authenticate.apps.AuthenticateConfig',
+    'workspace.apps.WorkspaceConfig',
+    
+    # Django Plugins 
+    'django_browser_reload',
 ]
 
 MIDDLEWARE = [
@@ -58,6 +62,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     "django_browser_reload.middleware.BrowserReloadMiddleware",
+
 ]
 
 ROOT_URLCONF = 'Lumen.urls'

@@ -15,5 +15,5 @@ class CreateUserForm(UserCreationForm):
         fields = ['username', 'email', 'password1', 'password2']
 
 class AuthorizeUser(AuthenticationForm):
-    username = forms.CharField(required=True, widget=forms.TextInput(attrs={'placeholder': 'Username'}))
+    username = forms.CharField(required=True, widget=forms.TextInput(attrs={'placeholder': 'Username - case sensitive'}))
     password = forms.CharField(required=True, widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))

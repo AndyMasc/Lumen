@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if startups %}
+        <ul>
+            {% for startup in startups %}
+                <li>
+                    <b> Startup name: </b> {{ startup.startupName }}: <br>
+                    <b> Description: </b> {{ startup.description }} <br> </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'workspace:add_startup' %}"> Add another startup? </a>
+    {% else %}
+        <h3> You have not added any startup ideas yet. <a href="{% url 'workspace:add_startup' %}"> Add? </a> </h3>
+    {% endif %}
+{% endblock %}
