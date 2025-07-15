@@ -14,6 +14,7 @@ body {
     top: 0;
     left: 0;
     border-bottom: solid #303030;
+    opacity: 0.9;
 }
 
 .navbar a {
@@ -108,14 +109,14 @@ img {
 @keyframes bobbing {
     0% {
         transform: translateY(0px);
-        animation-timing-function: ease-out;
+        animation-timing-function: ease-in;
     }
     50% {
         transform: translateY(20px);
-        animation-timing-function: ease-in;
+        animation-timing-function: ease-out;
     }
     100% {
         transform: translateY(0px);
-        animation-timing-function: ease-out
+        animation-timing-function: ease-in
     }
 }

@@ -1,16 +1,40 @@
 {% extends 'base.html' %}
 
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'workspace/css/dash_style.css' %}">
+{% endblock %}
+
 {% block content %}
-    {% if startups %}
-        <ul>
-            {% for startup in startups %}
-                <li>
-                    <b> Startup name: </b> {{ startup.startupName }}: <br>
-                    <b> Description: </b> {{ startup.description }} <br> </li>
-            {% endfor %}
-        </ul>
-        <a href="{% url 'workspace:add_startup' %}"> Add another startup? </a>
-    {% else %}
-        <h3> You have not added any startup ideas yet. <a href="{% url 'workspace:add_startup' %}"> Add? </a> </h3>
-    {% endif %}
+    <div class="navbar">
+        {% if user.is_authenticated %}
+            <a href="{% url 'home:index' %}"> Return home </a>
+            <a href="{% url 'workspace:add_startup' %}"> + Add startup </a>
+        {% endif %}
+    </div>
+    <div class="container">
+        <div class="heading">
+            <h1> {{ request.user.username}}'s startups </h1>
+            <p> Track and manage all your startup ventures in one place. </p>
+        </div>
+        <div class="widgets-container">
+            {% if startups %}
+                {% for startup in startups %}
+                    <div class="startup-widget">
+                        <div class="startup-widget-contents">
+                            <h2> {{ startup.startupName }} </h2>
+                            <p style="color:#cccccc;"> {{ startup.description }} </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <div class="startup-widget">
+                <a href="{% url 'workspace:add_startup' %}" style="text-decoration:none;">
+                    <div class="startup-widget-contents">
+                        <h2 style="color:#838385;"> + Add a startup? </h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
