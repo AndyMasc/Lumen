@@ -1,15 +1,15 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, redirect
 
-# Create your views here.
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import CreateUserForm, AuthorizeUser
 
+# Create your views here.
+
 def register(request):
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
-        context = {'form': form}
+        context = {'form':form}
         if form.is_valid():
             form.save()
             user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password1'])
@@ -17,7 +17,7 @@ def register(request):
             return redirect('home:index')
     else:
         form = CreateUserForm()
-        context = {'form': form}
+        context = {'form':form}
     return render(request, 'authenticate/register.html', context)
 
 def signin(request):

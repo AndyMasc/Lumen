@@ -31,7 +31,7 @@ body {
 
 .navbar a:hover {
     background-color: #363636;
-    color: WhiteSmoke;
+    color: white;
 }
 
 .container {
@@ -49,7 +49,7 @@ body {
 }
 
 .heading h1 {
-    color: WhiteSmoke;
+    color: white;
     font-family: Poppins;
     font-size: 45px;
     margin-bottom: 10px;
@@ -66,7 +66,7 @@ body {
 
 .widgets-container {
     width: 100%;
-    margin: 13% 2% 2% 0;
+    margin: 15% 2% 2% 0;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(auto-fill, 320px);
@@ -79,20 +79,23 @@ body {
     height: 200px;
     background-color: #1e2025;
     border-radius: 20px;
-    transition: all 0.5s ease-in-out;
-    transform: scale(1);
+    transition: all 0.5s ease;
 }
 
 .startup-widget:hover {
     transform: translateY(-7px);
-    background-color: #292c33;
-    border-top: solid 2px WhiteSmoke;
+    background-color: #26282d;
+    border-top: solid 2px white;
 }
 
 .startup-widget-contents {
-    color: WhiteSmoke;
+    color: #cccccc;
     font-family: Poppins;
     overflow: hidden;
-    height: 95%;
+    max-height: 95%;
     cursor: pointer;
+}
+
+.startup-widget-contents h2 {
+    margin: 0;
 }

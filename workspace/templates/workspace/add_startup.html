@@ -10,9 +10,9 @@
     <form action="" method="POST">
         {% csrf_token %}
         <ul>
-            <li> <input type="text" id="startupName" name="startupName" placeholder="Startup Name"> </li>
+            <li> <input type="text" id="startup_name" name="startup_name" placeholder="Startup Name"> </li>
             <li> <input type="text" id="description" name="description" placeholder="Briefly describe your startup"> </li>
-            <li> <input type="submit" value="Sumbit form"> </li>
+            <li> <input type="submit" value="Submit form"> </li>
         </ul>
     </form>
     <a href="{% url 'workspace:dashboard' %}"> Return to dashboard? </a>

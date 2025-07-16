@@ -9,32 +9,34 @@
     <div class="navbar">
         {% if user.is_authenticated %}
             <a href="{% url 'home:index' %}"> Return home </a>
-            <a href="{% url 'workspace:add_startup' %}"> + Add startup </a>
+            <a href="{% url 'workspace:add_startup' %}"> + Add a startup </a>
         {% endif %}
     </div>
     <div class="container">
         <div class="heading">
-            <h1> {{ request.user.username}}'s startups </h1>
-            <p> Track and manage all your startup ventures in one place. </p>
+            <h1> {{ request.user.username }}'s startups </h1>
+            <p> Track and manage all of your startup ventures in one place. </p>
         </div>
         <div class="widgets-container">
             {% if startups %}
                 {% for startup in startups %}
-                    <div class="startup-widget">
-                        <div class="startup-widget-contents">
-                            <h2> {{ startup.startupName }} </h2>
-                            <p style="color:#cccccc;"> {{ startup.description }} </p>
+                    <a href="{% url 'workspace:startup_evaluation' startup.id %}" style="text-decoration:none;">
+                        <div class="startup-widget">
+                            <div class="startup-widget-contents">
+                                <h2 style="color:white;"> {{ startup.startup_name }} </h2>
+                                <p style="color:#cccccc;"> {{ startup.description }} </p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 {% endfor %}
             {% endif %}
-            <div class="startup-widget">
-                <a href="{% url 'workspace:add_startup' %}" style="text-decoration:none;">
+            <a href="{% url 'workspace:add_startup' %}" style="text-decoration:none;">
+                <div class="startup-widget">
                     <div class="startup-widget-contents">
-                        <h2 style="color:#838385;"> + Add a startup? </h2>
+                        <h2 style="color:#838385;"> + Add a startup </h2>
                     </div>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
     </div>
 {% endblock %}

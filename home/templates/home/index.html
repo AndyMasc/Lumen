@@ -9,11 +9,10 @@
     <div class="home_hero">
         <div class="navbar">
             <a href="#place"> About </a>
-            <a href="#dest"> Privacy </a>
             <a href="https://github.com/AndyMasc/Lumen"> GitHub </a>
             {% if user.is_authenticated %}
                 <a href="{% url 'workspace:dashboard' %}"> Dashboard </a>
-                <a href="#Account"> Account </a>
+                <a href="#Settings"> Settings </a>
                 <a href="{% url 'authenticate:signout' %}"> Sign out </a>
             {% else %}
                 <a href="{% url 'authenticate:register' %}"> Register </a>
@@ -29,7 +28,7 @@
             <div class="CTA-button">
                 {% if user.is_authenticated %}
                 <a href="{% url 'workspace:dashboard' %}">
-                    View your dashboard,
+                    View your dashboard
                     <b>
                         {% if request.user.username|length <= 10 %}
                             {{ request.user.username }}

@@ -5,4 +5,5 @@ app_name = 'workspace'
 urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('add_startup/', views.add_startup, name='add_startup'),
+    path('<int:StartupIdea_id>/startup_evaluation/', views.startup_evaluation, name='startup_evaluation'),
 ]

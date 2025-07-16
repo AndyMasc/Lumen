@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
             name='startup',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('startupName', models.CharField(max_length=200)),
+                ('startup_name', models.CharField(max_length=200)),
                 ('description', models.CharField(max_length=2000)),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],

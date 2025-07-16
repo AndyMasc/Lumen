@@ -30,7 +30,7 @@ body {
 
 .navbar a:hover {
     background-color: #363636;
-    color: WhiteSmoke;
+    color: white;
 }
 
 .home_hero {
@@ -49,7 +49,7 @@ body {
     font-family: Poppins;
     font-size: 55px;
     font-weight: 550;
-    color: WhiteSmoke;
+    color: white;
 }
 
 .home_hero p {
@@ -71,7 +71,7 @@ body {
 .CTA-button a {
     background-color: black;
     border: solid white;
-    color: WhiteSmoke;
+    color: white;
     font-family: Poppins;
     font-size: 18px;
     text-decoration: none;
