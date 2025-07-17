@@ -7,6 +7,7 @@ class StartupIdea(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)  # Stores user ID, not username. Works if user changes username.
     startup_name = models.CharField(max_length=200)
     description = models.TextField()
+    tags = models.TextField(default='General') # A single word that describes the startup idea, e.g. "technology", "food", "engineering", etc.
 
     def __str__(self):
         return self.startup_name
