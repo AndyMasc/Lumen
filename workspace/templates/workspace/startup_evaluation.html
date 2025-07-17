@@ -1,1 +1,11 @@
-{{ evaluation.evaluation_text }}
+{% extends 'base.html' %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'workspace/css/evaluation_style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="title"> <h1> {{ startup.startup_name }} evaluation </h1> </div>
+    <p> {{ evaluation.evaluation_text }} </p>
+{% endblock %}
