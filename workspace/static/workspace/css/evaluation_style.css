@@ -1,0 +1,14 @@
+body {
+    background-color: black;
+}
+
+.title h1 {
+    font-family: Poppins;
+    color: white;
+    font-size: 45px;
+}
+
+p {
+    font-family: Poppins;
+    color: #cccccc;
+}
