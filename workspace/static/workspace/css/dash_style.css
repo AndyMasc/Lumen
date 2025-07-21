@@ -79,11 +79,18 @@ body {
     height: 200px;
     background-color: #1e2025;
     border-radius: 20px;
-    transition: all 0.5s ease;
+    transition: all 0.2s ease;
+    margin-bottom: 5%;
 }
 
 .startup-widget:hover {
     transform: translateY(-7px);
+    background-color: #26282d;
+    border-top: solid 2px white;
+}
+
+.startup-widget:active {
+    transform: scale(0.99);
     background-color: #26282d;
     border-top: solid 2px white;
 }
@@ -93,9 +100,18 @@ body {
     font-family: Poppins;
     cursor: pointer;
     max-height: 95%;
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 .startup-widget-contents h2 {
     margin: 0;
+}
+
+span {
+    font-size: 15px;
+    color: #1e2025;
+    font-family: Poppins;
+    background-color: skyblue;
+    padding: 5px;
+    border-radius: 10px;
 }

@@ -2,13 +2,91 @@ body {
     background-color: black;
 }
 
-.title h1 {
+h1 {
     font-family: Poppins;
+    text-align: center;
     color: white;
-    font-size: 45px;
+    font-size: 55px;
+    margin-bottom: 0;
 }
 
-p {
+h3 {
+    font-family: Poppins;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 80px;
+}
+
+.summary {
+    background-color: #0f1011;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    border: solid #242424;
+    margin: 2% auto;
+}
+
+.summary h2 {
+    font-family: Poppins;
+    text-align: center;
+    font-size: 40px;
+}
+
+.summary h4 {
+    font-family: Poppins;
+    text-align: center;
+    color: #cccccc;
+    font-size: 20px;
+}
+
+.summary p {
     font-family: Poppins;
     color: #cccccc;
+}
+
+.summary h1 {
+    text-align: left;
+    font-size: 30px;
+    margin: 0;
+}
+
+.rating h4 {
+    color: white;
+    font-weight: 400;
+    margin: 0;
+}
+
+.rating h3 {
+    margin: 40px;
+}
+
+.buttons {
+    display: flex;
+    position: relative;
+    width: 90%;
+    margin: auto;
+    left: 0;
+}
+
+a {
+    font-family: Poppins;
+    background-color: #1e2025;
+    font-size: 15px;
+    width: 90%;
+    text-align: center;
+    text-decoration: none;
+    color: #cccccc;
+    padding: 8px 15px;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    transform: scale(1);
+}
+
+a:hover {
+    background-color: #363636;
+    color: white;
 }

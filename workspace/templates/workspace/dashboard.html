@@ -23,7 +23,7 @@
                     <a href="{% url 'workspace:startup_evaluation' startup.id %}" style="text-decoration:none;">
                         <div class="startup-widget">
                             <div class="startup-widget-contents">
-                                <h2 style="color:white;"> {{ startup.startup_name }} </h2>
+                                <h2 style="color:white;"> {{ startup.startup_name }} <span> {{ startup.tags }} </span> </h2>
                                 <p style="color:#cccccc;"> {{ startup.description }} </p>
                             </div>
                         </div>

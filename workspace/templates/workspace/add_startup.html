@@ -2,18 +2,25 @@
 
 {% block head %}
     {% load static %}
-    <link rel="stylesheet" href="{% static 'home/css/dash_style.css' %}">
+    <link rel="stylesheet"  href="{% static 'workspace/css/add_startup_style.css' %}">
 {% endblock %}
 
 {% block content %}
-    <h1> Tell us about your startup </h1>
-    <form action="" method="POST">
-        {% csrf_token %}
-        <ul>
-            <li> <input type="text" id="startup_name" name="startup_name" placeholder="Startup Name"> </li>
-            <li> <input type="text" id="description" name="description" placeholder="Briefly describe your startup"> </li>
-            <li> <input type="submit" value="Submit form"> </li>
-        </ul>
-    </form>
-    <a href="{% url 'workspace:dashboard' %}"> Return to dashboard? </a>
+    <div class="container">
+        <h1>
+            <span style="color:white">
+                {% block title %} Tell us about your startup {% endblock %}
+            </span>
+        </h1>
+        <div class="form">
+            <form method="POST" action="" autocomplete="off">
+                {% csrf_token %}
+                    <input type="text" id="startup_name" name="startup_name" placeholder="Startup Name" class="startup-name" required>
+                    <textarea id="description" name="description" placeholder="Describe your startup" class="description" required></textarea>
+                {% block submit %}
+                    <input type="submit" value="Validate your startup idea">
+                {% endblock %}
+            </form>
+        </div>
+    </div>
 {% endblock %}

@@ -15,7 +15,10 @@ class StartupIdea(models.Model):
 class StartupEvaluation(models.Model):
     startup = models.ForeignKey(StartupIdea, on_delete=models.CASCADE)
     evaluation_text = models.TextField()
-    market_trends = models.TextField(default='')  # Optional field for market trends
+    market_trends = models.TextField(default='')
+    swot_analysis = models.TextField(default='')
+    areas_for_improvement = models.TextField(default='')
+    overall_score = models.IntegerField(default=0)
 
     def __str__(self):
         return self.evaluation_text

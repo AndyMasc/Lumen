@@ -6,7 +6,39 @@
 {% endblock %}
 
 {% block content %}
-    <div class="title"> <h1> {{ startup.startup_name }} evaluation </h1> </div>
-    <p> {{ evaluation.evaluation_text }} {{ startup.tags }} </p>
-    <p style="color:red;"> {{ market_trends }} </p>
+    <div class="container">
+        <h1> {{ startup.startup_name }} evaluation </h1>
+        <h3> {{ startup.startup_name }} has been categorized into the <b> {{ startup.tags }} </b> field </h3>
+
+        <div class="summary">
+            <div class="rating">
+                {% if startup_obj.overall_score >= 7 %}
+                    <h2 style="color:#7df289;"> Overall score: {{ startup_obj.overall_score }}/10 </h2>
+                {% elif startup_obj.overall_score >= 4 %}
+                    <h2 style="color:#f5a051;"> Overall score: {{ startup_obj.overall_score }}/10 </h2>
+                {% else %}
+                    <h2 style="color:#f27e7d;"> Overall score: {{ startup_obj.overall_score }}/10 </h2>
+                {% endif %}
+            </div>
+        </div>
+        <div class="summary">
+            <h1> Evaluation summary </h1>
+            <p> {{ startup_obj.evaluation_text|linebreaks }} </p>
+        </div>
+        <div class="summary">
+            <h1> Market trends <span style="color:skyblue; font-size: 15px;"> Powered by Google Trends </span> </h1>
+            <p style="color:red;"> {{ startup_obj.market_trends|linebreaks }} </p>
+        </div>
+        <div class="summary">
+            <h1> SWOT analysis </h1>
+            <p style="color:green;"> {{ startup_obj.swot_analysis|linebreaks }} </p>
+        </div>
+        <div class="summary">
+            <h1> Areas for improvement </h1>
+            <p style="color:green;"> {{ startup_obj.areas_for_improvement|linebreaks }} </p>
+        </div>
+        <div class="buttons">
+            <a href="{% url 'workspace:dashboard' %}" class="back-button"> Back to dashboard </a>
+        </div>
+    </div>
 {% endblock %}
