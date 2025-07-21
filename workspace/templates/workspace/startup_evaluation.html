@@ -37,6 +37,10 @@
             <h1> Areas for improvement </h1>
             <p style="color:green;"> {{ startup_obj.areas_for_improvement|linebreaks }} </p>
         </div>
+        <div class="summary">
+            <h1> Next steps </h1>
+            <p style="color:green;"> {{ startup_obj.next_steps|linebreaks }} </p>
+        </div>
         <div class="buttons">
             <a href="{% url 'workspace:dashboard' %}" class="back-button"> Back to dashboard </a>
         </div>

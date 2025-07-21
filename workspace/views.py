@@ -47,6 +47,9 @@ def startup_evaluation(request, StartupIdea_id):
     if not startup_obj.areas_for_improvement:
         suggest_areas_for_improvement(startup, startup_obj)
 
+    if not startup_obj.next_steps:
+        create_next_steps(startup, startup_obj)
+
     return render(request, 'workspace/startup_evaluation.html', {'startup':startup, 'startup_obj':startup_obj})
 
 # Functions to produce various startup reports based on startup ideas. Not views, but utility functions to be used in views.
@@ -95,6 +98,13 @@ def create_swot_analysis(startup, startup_obj):
     response = load_gemini_response(prompt)
 
     startup_obj.swot_analysis = response.text
+    startup_obj.save()
+
+def create_next_steps(startup,  startup_obj):
+    prompt = f"Suggest next steps for the startup idea '{startup.startup_name}' with the description: {startup.description}. Provide a concise list of actionable steps that the startup can take to move forward. Format your response as plain text. Keep answer informative, but concise. 1 paragraph maximum."
+    response = load_gemini_response(prompt)
+
+    startup_obj.next_steps = response.text
     startup_obj.save()
 
 def create_overall_rating(startup,  startup_obj):

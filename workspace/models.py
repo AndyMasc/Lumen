@@ -18,6 +18,7 @@ class StartupEvaluation(models.Model):
     market_trends = models.TextField(default='')
     swot_analysis = models.TextField(default='')
     areas_for_improvement = models.TextField(default='')
+    next_steps = models.TextField(default='')
     overall_score = models.IntegerField(default=0)
 
     def __str__(self):
