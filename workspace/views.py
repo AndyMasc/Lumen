@@ -44,7 +44,7 @@ def startup_evaluation(request, StartupIdea_id):
     if not startup_obj.overall_score:
         create_overall_rating(startup, startup_obj)
 
-    if not startup_obj.areas_for_improvement:
+    if not startup_obj.next_steps:
         suggest_areas_for_improvement(startup, startup_obj)
 
     if not startup_obj.next_steps:
@@ -63,7 +63,7 @@ def load_gemini_response(prompt):
     return response
 
 def assign_startup_tags(startup):
-    prompt = f"Generate a tag for the following startup idea called {startup.startup_name}. EG engineering, music, food, technology...: The description is: {startup.description}. Format your response as a single descriptive word/tag of which field the idea falls into. Never respond with more than one word."
+    prompt = f"Generate a tag for the following startup idea called {startup.startup_name}. EG engineering, music, food, technology...: The description is: {startup.description}. Format your response as a single descriptive word/tag of which field the idea falls into. Never respond with more than one word. Make sure the word you give is desciptive in one word and can be put through google trends to reveal powerfull, usefull data for the startup idea represented by the tag."
     response = load_gemini_response(prompt)
     # Save the response text as tags for the startup
     startup.tags = response.text

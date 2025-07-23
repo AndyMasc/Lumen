@@ -29,7 +29,7 @@ body {
 }
 
 .navbar a:hover {
-    background-color: #363636;
+    background-color: #1e2025;
     color: white;
 }
 
@@ -77,12 +77,12 @@ body {
     text-decoration: none;
     border-radius: 15px;
     padding: 10px 15px;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     transform: scale(1);
 }
 
 .CTA-button a:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 img {

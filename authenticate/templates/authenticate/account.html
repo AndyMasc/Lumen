@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'authenticate/css/settings_style.css' %}">
+{% endblock %}
+
+{% block content %}
+        <h1> Account settings </h1>
+            <form method="POST" action="{% url 'authenticate:account' %}">
+                {% csrf_token %}
+
+                <div class="option">
+                    <h2> Username </h2>
+                    <input type="text" value="{{ user.username }}" placeholder="Username" name="username">
+                </div>
+
+                <div class="option">
+                    <h2> Email </h2>
+                    <input type="text" value="{{ user.email }}" placeholder="Email address" name="email">
+                </div>
+
+                <div class="option">
+                    <h2> Password </h2>
+                    <p> ******** </p>
+                    <a href="#"> Reset password </a>
+                </div>
+
+                <div class="danger-zone">
+                    <h2> Danger Zone </h2>
+                    <a href="{% url 'authenticate:delete_account' %}" class="del-account">
+                        <div class="del-option">
+                            Delete account
+                        </div>
+                    </a>
+                </div>
+                {% block submit %}
+                    <input type="submit" value="Save changes" class="save-changes">
+                {% endblock %}
+        </form>
+{% endblock %}
