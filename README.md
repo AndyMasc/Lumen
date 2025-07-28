@@ -23,12 +23,6 @@ Lumen simplifies the chaotic early stages of product validation. It highlights i
 2. Describe the startup in detail
 3. Watch Lumen generate evaluations to greatly speed up and streamline your busy job as a starting entrepenuer
 4. Refine your ideas based on actionable insights.
-
-##  Tech Stack
-
-- Backend: Django  
-- Hosting: Koyeb  
-- Databse: DBSqlite3
   
 ##  Why Lumen?
 
