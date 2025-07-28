@@ -6,10 +6,19 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="wp-block-cover ticss-a35902ec"><span aria-hidden="true" class="wp-block-cover__background has-custom-dark-blue-2-background-color has-background-dim-100 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+        <p class="has-text-align-center has-large-font-size">Dust Particle Effect</p>
+        <div class="bg-animation">
+            <div id='stars'></div>
+            <div id='stars2'></div>
+            <div id='stars3'></div>
+            <div id='stars4'></div>
+        </div><!-- / STAR ANIMATION -->
+        </div>
+    </div>
+
     <div class="home_hero">
         <div class="navbar">
-            <a href="#place"> About </a>
             <a href="https://github.com/AndyMasc/Lumen"> GitHub </a>
             {% if user.is_authenticated %}
                 <a href="{% url 'workspace:dashboard' %}"> Dashboard </a>
@@ -21,9 +30,9 @@
             {% endif %}
         </div>
         <div class="hero-text-section">
-            <h1> Lumen delivers early clarity for bold startups </h1>
+            <h1> Lumen transforms bold startup visions into validated startup ventures </h1>
             <p>
-                Lumen analyzes your startup concepts against real industry data to
+                Lumen analyzes your startup concepts against industry trends to
                 deliver actionable insights that help founders make smarter decisions faster.
             </p>
             <div class="CTA-button">
@@ -37,14 +46,74 @@
                     </b>
                 </a>
                 {% else %}
-                    <a href="{% url 'authenticate:register' %}"> Start using Lumen </a>
+                    <a href="{% url 'authenticate:register' %}"> Validate your startup today </a>
                 {% endif %}
             </div>
         </div>
         <img src="{% static 'home/images/HeroImg.png' %}" alt="Demo Image">
     </div>
-    <div class="ScrollDown">
-        <img src="{% static 'home/images/DownArrow.png' %}" alt="Scroll Down">
+    <div class="about-section" id="about">
+        <div class="about-container">
+            <div class="about-heading">
+                <h1> From ideas to insights in <em> minutes, </em> not months </h1>
+            </div>
+            <div class="about-text">
+                <p>
+                    Skip months of market research. Lumen analyzes real Google Trends data through advanced AI to deliver clear,
+                    comprehensive startup evaluations in under 5 minutes, empowering you to pivot quickly or launch with confidence.
+                </p>
+            </div>
+        </div>
+        <div class="feature-container">
+            <div class="feature">
+                <img src="{% static 'home/images/Feature Icon Images/LightningFeature.png' %}" alt="Feature 1">
+                <h2> Instant analysis </h2>
+                <p> Your startup idea is instantly analyzed against real market data </p>
+            </div>
+            <div class="feature">
+                <img src="{% static 'home/images/Feature Icon Images/ClockFeature.png' %}" alt="Feature 2">
+                <h2> Rapid evaluation </h2>
+                <p> Receive a comprehensive, detailed evaluation in under 5 minutes </p>
+            </div>
+            <div class="feature">
+                <img src="{% static 'home/images/Feature Icon Images/RocketFeature.png' %}" alt="Feature 3">
+                <h2> Launch Ready </h2>
+                <p> Get specific and valuble insights to make your startup vision a reality </p>
+            </div>
+        </div>
     </div>
+    <div class="about-evaluation">
+        <div class="about-evaluation-container">
+            <div class="about-evaluation-heading">
+                <h1> <em> Meaningfull metrics </em> for mission critical choices </h1>
+            </div>
+            <div class="about-evaluation-description">
+                <p>
+                    Lumen delivers data-driven startup evaluations through comprehensive analysis frameworks,
+                    including strategic SWOT assessment, market trend analysis, competitive evaluation, and quantitative performance metrics.
+                </p>
+            </div>
+        </div>
+        <div class="img-wrapper">
+            <img src="{% static 'home/images/Feature Icon Images/EvaluationDemo.png' %}" alt="Evaluation Image">
+        </div>
+    </div>
+    <div class="bottom-CTA">
+        <div class="bottom-CTA-container">
+            <div class="bottom-CTA-heading">
+                <h1> Ready to validate your startup idea? </h1>
+            </div>
+        </div>
+        <div class="bottom-CTA-button">
+            {% if user.is_authenticated %}
+                <a href="{% url 'workspace:dashboard' %}"> View your dashboard </a>
+            {% else %}
+                <a href="{% url 'authenticate:register' %}"> Validate your startup today </a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="footer">
+        <p> © 2025 Lumen. All rights reserved. </p>
+        <p> Made with 🤍 by <b> Andy Mascarenhas </b> </p>
     </div>
 {% endblock %}

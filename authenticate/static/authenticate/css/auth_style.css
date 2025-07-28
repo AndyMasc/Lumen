@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: Poppins;
+    font-family: "Mona Sans";
     min-height: 100vh;
 }
 
@@ -22,7 +22,6 @@ h1 {
 .form {
     background-color: #0f1011;
     border-radius: 15px;
-    border: solid #242424;
     width: 400px;
     height: auto;
     display: flex;
@@ -44,7 +43,6 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 input[type='email'],
@@ -53,7 +51,7 @@ input[type='text'] {
     background-color: black;
     color: #cccccc;
     width: 80%;
-    border: solid 2px #212121;
+    border: none;
     border-radius: 15px;
     font-size: 15px;
     height: 50px;
@@ -63,7 +61,7 @@ input[type='text'] {
 input[type='submit'] {
     padding: 8px 10px;
     width: 80%;
-    font-family: Poppins;
+    font-family: "Mona Sans";
     font-size: 15px;
     border-radius: 15px;
     color: white;

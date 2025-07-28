@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-    font-family: Poppins;
+    font-family: "Mona Sans";
     text-align: center;
     color: white;
     font-size: 55px;
@@ -11,7 +11,7 @@ h1 {
 }
 
 h3 {
-    font-family: Poppins;
+    font-family: "Mona Sans";
     text-align: center;
     color: white;
     font-weight: 500;
@@ -29,20 +29,20 @@ h3 {
 }
 
 .summary h2 {
-    font-family: Poppins;
+    font-family: "Mona Sans";
     text-align: center;
     font-size: 40px;
 }
 
 .summary h4 {
-    font-family: Poppins;
+    font-family: "Mona Sans";
     text-align: center;
     color: #cccccc;
     font-size: 20px;
 }
 
 .summary p {
-    font-family: Poppins;
+    font-family: "Mona Sans";
     color: #cccccc;
 }
 
@@ -71,7 +71,7 @@ h3 {
 }
 
 a {
-    font-family: Poppins;
+    font-family: "Mona Sans";
     background-color: #1e2025;
     font-size: 15px;
     width: 90%;

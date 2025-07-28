@@ -2,40 +2,58 @@
 
 {% block head %}
     {% load static %}
-    <link rel="stylesheet" href="{% static 'authenticate/css/settings_style.css' %}">
+    <link rel="stylesheet" href="{% static 'authenticate/css/account_style.css' %}">
 {% endblock %}
 
 {% block content %}
+    <form method="POST" action="{% url 'authenticate:update_user' %}">
+        {% csrf_token %}
         <h1> Account settings </h1>
-            <form method="POST" action="{% url 'authenticate:account' %}">
-                {% csrf_token %}
 
-                <div class="option">
-                    <h2> Username </h2>
-                    <input type="text" value="{{ user.username }}" placeholder="Username" name="username">
+        {% for field in form %}
+            <div class="option">
+                <h2> {{ field.label }} </h2>
+                {{ field }}
+                <div class="error-text">
+                    {% if field.errors %}
+                        {{ field.errors.0 }}
+                    {% endif %}
                 </div>
+            </div>
+        {% endfor %}
 
-                <div class="option">
-                    <h2> Email </h2>
-                    <input type="text" value="{{ user.email }}" placeholder="Email address" name="email">
-                </div>
+        <div class="option">
+            <h2> Password </h2>
+            <p> ******** </p>
+            <p> Password resets are unavailable at this time. </p>
+        </div>
 
-                <div class="option">
-                    <h2> Password </h2>
-                    <p> ******** </p>
-                    <a href="#"> Reset password </a>
-                </div>
+        {% block submit %}
+            <input type="submit" value="Save changes" class="save-changes">
 
-                <div class="danger-zone">
-                    <h2> Danger Zone </h2>
-                    <a href="{% url 'authenticate:delete_account' %}" class="del-account">
-                        <div class="del-option">
-                            Delete account
-                        </div>
-                    </a>
+            <a href="{% url 'home:index' %}" class="return-home-a"> Return home </a>
+        {% endblock %}
+
+        <div class="danger-zone">
+            <h2> Danger zone </h2>
+            <p> You are authenticated as <b> {{ request.user.username }}. </b> <b> No </b> confirmation prompts will show for these actions, resulting in an <b> immediate and permanent loss of data. </b> </p>
+            <a href="{% url 'authenticate:delete_startups' %}" class="del-account">
+                <div class="del-option">
+                    Delete all startups related to this account
                 </div>
-                {% block submit %}
-                    <input type="submit" value="Save changes" class="save-changes">
-                {% endblock %}
-        </form>
+            </a>
+            <a href="{% url 'authenticate:delete_account' %}" class="del-account">
+                <div class="del-option">
+                    Delete account
+                </div>
+            </a>
+        </div>
+    </form>
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+                <div class="success"> <p> {{ message }} </p> </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
 {% endblock %}

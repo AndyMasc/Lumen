@@ -19,7 +19,7 @@ body {
 }
 
 .navbar a {
-    font-family: Poppins;
+    font-family: "Mona Sans";
     font-size: 15px;
     text-decoration: none;
     color: #cccccc;
@@ -50,7 +50,7 @@ body {
 
 .heading h1 {
     color: white;
-    font-family: Poppins;
+    font-family: "Mona Sans";
     font-size: 45px;
     margin-bottom: 10px;
     margin-left: 2%;
@@ -58,7 +58,7 @@ body {
 
 .heading p {
     color: #cccccc;
-    font-family: Poppins;
+    font-family: "Mona Sans";
     font-size: 20px;
     margin-top: 10px;
     margin-left: 2%;
@@ -97,9 +97,10 @@ body {
 
 .startup-widget-contents {
     color: #cccccc;
-    font-family: Poppins;
+    font-family: "Mona Sans";
     cursor: pointer;
     max-height: 95%;
+    word-wrap: break-word;
     overflow-y: auto;
 }
 
@@ -107,11 +108,17 @@ body {
     margin: 0;
 }
 
-span {
+.delete-btn {
+    background-color: #f27e7d;
+    border: none;
+    color: #5c0009;
     font-size: 15px;
-    color: #1e2025;
-    font-family: Poppins;
-    background-color: skyblue;
+    border-radius: 5px;
     padding: 5px;
-    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #f05c5b;
 }

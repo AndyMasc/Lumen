@@ -1,0 +1,128 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    font-family: "Mona Sans";
+    text-align: center;
+    font-size: 35px;
+}
+
+.option, .danger-zone {
+    background-color: #14161a;
+    border-radius: 15px;
+    padding: 10px 20px;
+    width: 40%;
+    box-sizing: border-box;
+    margin: 0px auto 20px auto;
+}
+
+.danger-zone {
+    background-color: rgb(255, 0, 0, 0.1);
+    border: 2px solid #5c0009;
+    margin: 20px auto 20px auto;
+}
+
+.danger-zone a {
+    text-decoration: none;
+}
+
+.danger-zone h2 {
+    color: white;
+    font-family: "Mona Sans";
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.danger-zone p {
+    color: #f27e7d;
+    font-family: "Mona Sans";
+    font-size: 15px;
+}
+
+.option h2 {
+    color: white;
+    font-family: "Mona Sans";
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.option p {
+    color: #cccccc;
+    font-family: "Mona Sans";
+    font-size: 15px;
+}
+
+.option a {
+    color: white;
+    font-size: 14px;
+    font-family: "Mona Sans";
+    text-decoration: none;
+}
+
+.del-option, .save-changes, input, .return-home-a {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: "Mona Sans";
+    font-size: 15px;
+    border-radius: 15px;
+    color: #cccccc;
+    cursor: pointer;
+    background-color: black;
+    border: none;
+    transition: all 0.4s ease;
+    transform: scale(1);
+    margin-bottom: 15px;
+}
+
+.save-changes, .return-home-a {
+    width: 40%;
+    height: 50px;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: #1e2025;
+    border: none;
+    margin: 20px auto 20px auto;
+    display: block;
+}
+
+.save-changes:hover, .return-home-a:hover {
+    background-color: #26282d;
+}
+
+.del-option {
+    background-color: rgb(115, 6, 15, 0.5);
+    width: 100%;
+    margin: 2% auto 2% auto;
+    border: solid black;
+    text-align: center;
+    font-size: 15px;
+}
+
+.del-option:hover {
+    background-color: rgb(115, 9, 13, 1);
+}
+
+.error-text {
+    color: #f27e7d;
+    font-family: "Mona Sans";
+    font-size: 12px;
+}
+
+.success {
+    font-family: "Mona Sans";
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.return-home {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 45px;
+}

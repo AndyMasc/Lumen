@@ -120,3 +120,8 @@ def suggest_areas_for_improvement(startup, startup_obj):
 
     startup_obj.areas_for_improvement = response.text
     startup_obj.save()
+
+def delete_startup(request, StartupIdea_id):
+    startup = StartupIdea.objects.get(user=request.user, id=StartupIdea_id)
+    startup.delete()
+    return redirect("workspace:dashboard")
