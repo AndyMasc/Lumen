@@ -28,7 +28,7 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 20px;
+    padding: 20px;
 }
 
 .form p {
@@ -97,4 +97,18 @@ a {
     list-style:none;
     padding: 0;
     font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .form {
+        width: 80%;
+    }
+    input[type='email'],
+    input[type='password'],
+    input[type='text'] {
+        width: 90%;
+    }
+    input[type='submit'] {
+        width: 90%;
+    }
 }

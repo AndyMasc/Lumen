@@ -1,5 +1,13 @@
 body {
     background-color: black;
+    width: 100%;
+    position: absolute;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
@@ -13,7 +21,7 @@ h1 {
     background-color: #14161a;
     border-radius: 15px;
     padding: 10px 20px;
-    width: 40%;
+    width: 60%;
     box-sizing: border-box;
     margin: 0px auto 20px auto;
 }
@@ -78,7 +86,7 @@ h1 {
 }
 
 .save-changes, .return-home-a {
-    width: 40%;
+    width: 60%;
     height: 50px;
     text-decoration: none;
     text-align: center;
@@ -125,4 +133,14 @@ h1 {
     top: 0;
     left: 0;
     padding: 45px;
+}
+
+@media (max-width: 1024px) {
+    .option, .danger-zone {
+        width: 80%;
+    }
+
+    .save-changes, .return-home-a {
+        width: 80%;
+    }
 }

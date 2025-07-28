@@ -368,7 +368,7 @@ img {
 }
 
 .bottom-CTA-heading {
-    max-width: 90%;
+    min-width: 80%;
     margin: auto;
 }
 
