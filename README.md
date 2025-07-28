@@ -1,10 +1,10 @@
 # Lumen
 
-Lumen is a sleek validation platform for startup founders, product teams, and innovators. It helps you evaluate ideas before heavy investment—so you can build with confidence, not guesswork.
+Lumen is a sleek validation platform for startup founders, product teams, and innovators. It helps you evaluate ideas before heavy investment so you can build with confidence, not guesswork. The project follows best practise and has a "clean and pragmatic design".
 
 ##  What is Lumen?
 
-Lumen simplifies the chaotic early stages of product validation. It highlights ideas that have real traction and which need iteration.
+Lumen simplifies the chaotic early stages of product validation. It highlights ideas that have real traction and which need iteration for busy, budding entrepenuers.
 
 ##  Features
 
