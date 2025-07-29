@@ -45,6 +45,10 @@ SECURE_HSTS_SECONDS = 31536000  # Enable HSTS for 1 year
 SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True  # Preload HSTS for all subdomains
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
+X_FRAME_OPTIONS = 'DENY'  # Prevents clickjacking
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
