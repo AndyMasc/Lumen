@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
-from django.conf.global_settings import SECURE_HSTS_SECONDS, SECURE_SSL_REDIRECT, SECURE_HSTS_INCLUDE_SUBDOMAINS
+from django.conf.global_settings import SECURE_HSTS_SECONDS, SECURE_SSL_REDIRECT, SECURE_HSTS_INCLUDE_SUBDOMAINS, \
+    WSGI_APPLICATION
 
 # Configure login URL for views that require authentication
 LOGIN_URL = 'authenticate:signin'
@@ -70,6 +71,7 @@ INSTALLED_APPS = [
 ]
 
 ASGI_APPLICATION = 'Lumen.asgi.application'
+WSGI_APPLICATION = 'Lumen.wsgi.application'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
