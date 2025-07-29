@@ -1,1 +1,1 @@
-web: daphne -b 0.0.0.0 -p $PORT Lumen.asgi:application
+web: python manage.py runserver 0.0.0.0:$PORT
