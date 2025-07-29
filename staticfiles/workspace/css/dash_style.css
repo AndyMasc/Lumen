@@ -1,0 +1,138 @@
+body {
+    background-color: black;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    top: 0;
+    left: 0;
+    border-bottom: solid #303030;
+    z-index: 1000;
+}
+
+.navbar a {
+    font-family: "Mona Sans";
+    font-size: 15px;
+    text-decoration: none;
+    color: #cccccc;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    transform: scale(1);
+}
+
+.navbar a:hover {
+    background-color: #1e2025;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    margin-top: 100px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+}
+
+.heading {
+    position: relative;
+    width: calc(100% - 50px);
+    height: 200px;
+    margin-left: 30px;
+}
+
+.heading h1 {
+    color: white;
+    font-family: "Mona Sans";
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.heading p {
+    color: #cccccc;
+    font-family: "Mona Sans";
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.widgets-container {
+    width: calc(100% - 50px);
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 320px);
+    justify-content: start;
+    gap: 20px;
+    margin-left: 30px;
+}
+
+.startup-widget {
+    padding: 20px;
+    height: 200px;
+    background-color: #1e2025;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    margin-bottom: 20px;
+}
+
+.startup-widget:hover {
+    transform: translateY(-7px);
+    background-color: #26282d;
+    border-top: solid 2px white;
+}
+
+.startup-widget:active {
+    transform: scale(0.99);
+    background-color: #26282d;
+    border-top: solid 2px white;
+}
+
+.startup-widget-contents {
+    color: #cccccc;
+    font-family: "Mona Sans";
+    cursor: pointer;
+    max-height: 95%;
+    word-wrap: break-word;
+    overflow-y: auto;
+}
+
+.startup-widget-contents h2 {
+    margin: 0;
+}
+
+.delete-btn {
+    background-color: #f27e7d;
+    border: none;
+    color: #5c0009;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #f05c5b;
+}
+
+@media (max-width: 768px) {
+    .heading h1 {
+        font-size: 30px;
+    }
+
+    .heading p {
+        font-size: 16px;
+    }
+    .widgets-container {
+        justify-content: center;
+    }
+}
