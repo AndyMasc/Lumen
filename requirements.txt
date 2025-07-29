@@ -17,12 +17,14 @@ dotenv==0.9.9
 google-auth==2.40.3
 google-genai==1.26.0
 google_search_results==2.4.2
+gunicorn==23.0.0
 h11==0.16.0
 httpcore==1.0.9
 httpx==0.28.1
 hyperlink==21.0.0
 idna==3.10
 incremental==24.7.2
+packaging==25.0
 pyasn1==0.6.1
 pyasn1_modules==0.4.2
 pycparser==2.22
