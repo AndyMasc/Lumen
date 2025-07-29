@@ -10,7 +10,6 @@ cffi==1.17.1
 charset-normalizer==3.4.2
 constantly==23.10.4
 cryptography==45.0.5
-daphne==4.2.1
 Django==5.2.4
 django-browser-reload==1.18.0
 django-environ==0.12.0
