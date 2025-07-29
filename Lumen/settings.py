@@ -41,7 +41,7 @@ SERPAPI_API_KEY = os.getenv("SERPAPI_API_KEY")
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 SECURE_HSTS_SECONDS = 31536000  # Enable HSTS for 1 hour
-SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
+#SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True  # Preload HSTS for all subdomains
 
