@@ -31,7 +31,7 @@ analysis, next steps, overal evaluation, market trends and more, and an overall 
 
 ## AI:
 
-AI was used ONLY for debugging and generating specific images. Nothing else.
+AI was used only for generating specific images.
 
 ##  Contact
 
