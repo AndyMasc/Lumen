@@ -1,2 +1,1 @@
 python-3.13.1
-serpapi==0.1.5
