@@ -134,6 +134,9 @@ body {
         font-size: 16px;
         text-align: center;
     }
+    .heading {
+        margin-bottom: 20px;
+    }
     .widgets-container {
         justify-content: center;
     }
