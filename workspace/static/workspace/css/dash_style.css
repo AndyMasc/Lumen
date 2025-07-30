@@ -136,8 +136,12 @@ body {
     }
     .heading {
         margin-bottom: 20px;
+        margin-left: 0;
+        width: 100%;
     }
     .widgets-container {
         justify-content: center;
+        width: 100%;
+        margin-left: 0;
     }
 }
