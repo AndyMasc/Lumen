@@ -12,9 +12,6 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
-from django.conf.global_settings import SECURE_HSTS_SECONDS, SECURE_SSL_REDIRECT, SECURE_HSTS_INCLUDE_SUBDOMAINS, \
-    WSGI_APPLICATION
-
 # Configure login URL for views that require authentication
 LOGIN_URL = 'authenticate:signin'
 
@@ -51,7 +48,7 @@ SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
 X_FRAME_OPTIONS = 'DENY'  # Prevents clickjacking
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['lumen.koyeb.app', '127.0.0.1']
 
