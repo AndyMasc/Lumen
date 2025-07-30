@@ -40,12 +40,7 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 SECURE_HSTS_SECONDS = 31536000  # Enable HSTS for 1 year
 SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True  # Preload HSTS for all subdomains
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
-X_FRAME_OPTIONS = 'DENY'  # Prevents clickjacking
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -120,7 +115,7 @@ DATABASES = {
         'USER': os.getenv('DATABASE_USER'),
         'PASSWORD': os.getenv('DATABASE_PASSWORD'),
         'HOST': os.getenv('DATABASE_HOST'),
-        'PORT': 5432,  # Default postgresql port
+        'OPTIONS': {'sslmode': 'require'}  # Use SSL for database connection,
     }
 }
 
@@ -160,6 +155,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
