@@ -16,7 +16,7 @@
             <form method="POST" action="" autocomplete="off">
                 {% csrf_token %}
                     <input type="text" id="startup_name" name="startup_name" placeholder="Startup Name" class="startup-name" maxlength="100" required>
-                    <textarea id="description" name="description" placeholder="Describe your startup" class="description" maxlength="5000" required> </textarea>
+                    <textarea id="description" name="description" placeholder="Describe your startup" class="description" maxlength="5000" required></textarea>
                 {% block submit %}
                     <input type="submit" value="Validate your startup idea">
                 {% endblock %}
