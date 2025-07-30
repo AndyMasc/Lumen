@@ -246,7 +246,7 @@ img {
 
 .about-heading h1 {
     font-family: "Mona Sans";
-    font-size: 45px;
+    font-size: 3.4pvw;
     font-weight: 550;
     color: white;
     text-align: right;
@@ -326,7 +326,7 @@ img {
 
 .about-evaluation-heading h1 {
     font-family: "Mona Sans";
-    font-size: 45px;
+    font-size: 3.4vw;
     text-align: right;
     color: white;
 }
@@ -374,7 +374,7 @@ img {
 
 .bottom-CTA h1 {
     font-family: "Mona Sans";
-    font-size: 45px;
+    font-size: 3.4vw;
     color: white;
     text-align: center;
 }
