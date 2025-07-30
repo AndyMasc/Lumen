@@ -37,7 +37,6 @@ GEMINI_API_KEY = os.getenv("GOOGLE_API_KEY")
 SERPAPI_API_KEY = os.getenv("SERPAPI_API_KEY")
 
 CSRF_COOKIE_SECURE = True
-
 SESSION_COOKIE_SECURE = True
 SECURE_HSTS_SECONDS = 31536000  # Enable HSTS for 1 year
 SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
@@ -49,7 +48,7 @@ SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
 X_FRAME_OPTIONS = 'DENY'  # Prevents clickjacking
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['lumen.koyeb.app', '127.0.0.1']
 
