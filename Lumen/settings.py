@@ -30,7 +30,7 @@ from dotenv import load_dotenv
 env = environ.Env(DEBUG=(bool, False))
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY_LUMEN')
 
 load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
@@ -118,11 +118,11 @@ WSGI_APPLICATION = 'Lumen.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DATABASE_NAME'),
-        'USER': os.getenv('DATABASE_USER'),
-        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
-        'HOST': os.getenv('DATABASE_HOST'),
-        'PORT': os.getenv('DATABASE_PORT', '5432'),  # Add this line
+        'NAME': os.getenv('DB_NAME_LUMEN'),
+        'USER': os.getenv('DB_USER_LUMEN'),
+        'PASSWORD': os.getenv('DB_PASS_LUMEN'),
+        'HOST': os.getenv('DB_HOST_LUMEN'),
+        'PORT': os.getenv('DB_PORT_LUMEN', '5432'),  # Add this line
 
         'OPTIONS': {'sslmode': 'require'}  # Use SSL for database connection,
     }
